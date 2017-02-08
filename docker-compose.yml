@@ -11,7 +11,7 @@ services:
       - php
 
   php:
-    build: ./php/${PHP_VERSON}/
+    build: ./php/${PHP_VERSION}/
     expose:
       - 9000
     volumes:
