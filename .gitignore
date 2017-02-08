@@ -1,6 +1,12 @@
-# fichiers systeme
+# mac os
 .DS_Store
 
-#www/html/**
+# divers
+dump/
+
+# html
 www/html/**/*
 !www/html/info.php
+
+# docker-compose env file
+.env
