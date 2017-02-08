@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  nginx:
+    build: ./nginx/
+    ports:
+      - 80:80
+    volumes:
+      - "${PROJECT_ROOT}:/var/www/html"
+    depends_on:
+      - php
+
+  php:
+    build: ./php/
+    expose:
+      - 9000
+    volumes:
+      - "${PROJECT_ROOT}:/var/www/html"
+    # networks:
+      # - database
+      # - server
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mariadb:latest
+    volumes:
+      - data:/var/lib/mysql/
+    ports:
+      - 4000:3306
+    # networks:
+      # - database
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+
+volumes:
+  data:
+#
+# networks:
+  # database:
+  # server:

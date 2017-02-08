@@ -1,0 +1,6 @@
+# fichiers systeme
+.DS_Store
+
+#www/html/**
+www/html/**/*
+!www/html/info.php
