@@ -7,7 +7,7 @@ RUN apk add --no-cache \
         && NPROC=$(getconf _NPROCESSORS_ONLN) \
         && pecl install xdebug \
         && docker-php-ext-enable xdebug \
-        && docker-php-ext-install -j${NPROC} gd xsl pdo_mysql mysqli \
+        && docker-php-ext-install -j${NPROC} gd xsl mysql pdo_mysql mysqli \
         # xdebug config
         && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
         && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
