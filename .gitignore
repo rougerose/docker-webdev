@@ -4,6 +4,7 @@
 # divers
 dump/
 sources/
+maquette/
 
 # html
 www/html/**/*
