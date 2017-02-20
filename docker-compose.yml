@@ -2,7 +2,8 @@ version: "3"
 
 services:
   nginx:
-    build: ./nginx/
+    image: rougerose/nginx:latest
+    # build: ./nginx/
     ports:
       - 80:80
     volumes:
@@ -11,7 +12,8 @@ services:
       - php
 
   php:
-    build: ./php/${PHP_VERSION}/
+    image: rougerose/php:5.6-fpm-alpine
+    # build: ./php/${PHP_VERSION}/
     expose:
       - 9000
     volumes:

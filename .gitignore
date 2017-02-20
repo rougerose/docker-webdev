@@ -3,6 +3,7 @@
 
 # divers
 dump/
+sources/
 
 # html
 www/html/**/*
